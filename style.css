@@ -1,0 +1,469 @@
+/* MUST BE AT TOP */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+/* Background image */
+.landing {
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1503264116251-35a269479413") no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Center content */
+.content {
+    text-align: center;
+    color: white;
+    animation: dropDown 1.5s ease;
+}
+
+/* Profile image */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Name */
+.name {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* Button */
+.enter-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #ff9800;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Drop animation */
+@keyframes dropDown {
+    from {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Top banner with background */
+.top-banner {
+    height: 200px;
+    background: url("https://images.unsplash.com/photo-1503264116251-35a269479413") no-repeat center/cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 34px;
+}
+
+/* Main section */
+.home-bg {
+    height: calc(100vh - 200px); /* remaining space */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #9491bd;
+}
+.big-btn {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* delay each button */
+.big-btn:nth-child(1) { animation-delay: 0.3s; }
+.big-btn:nth-child(2) { animation-delay: 0.6s; }
+.big-btn:nth-child(3) { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Center content */
+.home-content {
+    text-align: center;
+}
+
+/* Buttons */
+.big-btn {
+    display: block;
+    width: 250px;
+    padding: 15px;
+    margin: 10px auto;
+    font-size: 18px;
+    border: none;
+    background: #333;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.big-btn:hover {
+    box-shadow: 0 0 15px #cfcdc9;
+}
+
+.big-btn:hover {
+    background: #ff9800;
+}
+
+/* Smooth page animation */
+.about-page {
+    min-height: 100vh;
+    display: flex;
+    animation: fadeIn 1s ease;
+}
+.back-btn {
+    position: fixed;   /* stays in top-left even on scroll */
+    top: 20px;
+    left: 20px;
+
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background: #333;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Hover effect */
+.back-btn:hover {
+    background: #ff9800;
+    transform: translateX(-5px);
+    transition: 0.3s;
+}
+/* Left side animation (slide from left) */
+.about-left {
+    width: 60%;
+    padding: 40px;
+
+    animation: slideLeft 1s ease;
+}
+
+.about-left p {
+    font-size: 30px;   /* increase size */
+    line-height: 1.6;  /* better readability */
+}
+
+/* Right side animation (slide from right) */
+.about-right {
+    width: 30%;
+    background: #60b8be;
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    animation: slideRight 1s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Left comes from left */
+@keyframes slideLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Right comes from right */
+@keyframes slideRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+footer {
+    width: 100%;
+    text-align: center;   /* centers text */
+    background: #222;
+    color: white;
+    padding: 10px 0;
+}
+
+/* Title */
+.skills-title {
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeIn 1s ease;
+}
+
+/* Container */
+.skills-container {
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* Skill cards */
+.skill-card {
+    background: #418ee7;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+
+    animation: slideUp 1s ease;
+    transition: transform 0.3s;
+}
+
+/* Hover effect */
+.skill-card:hover {
+    transform: scale(1.05);
+}
+
+/* Progress bar */
+.bar {
+    width: 100%;
+    height: 10px;
+    background: #52abc9;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: #f0cc97;
+    border-radius: 10px;
+    animation: load 2s forwards;
+}
+
+/* Different skill levels */
+.progress.html { width: 90%; }
+.progress.css { width: 80%; }
+.progress.java { width: 70%; }
+
+/* Animations */
+@keyframes load {
+    from { width: 0; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.skills-bg {
+    position: relative;
+}
+
+.skills-bg::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+}
+
+/* Bring content above overlay */
+.skills-bg * {
+    position: relative;
+    z-index: 1;
+}
+/* Page layout */
+.cert-page {
+    display: flex;
+    height: 80vh;
+}
+.cert-heading {
+    text-align: center;
+    background-color: #9b9090;   /* change color here */
+    color: rgb(22, 26, 27);
+
+    padding: 15px;
+    margin: 0;
+}
+
+/* LEFT SIDE */
+.cert-left {
+    width: 30%;
+    background: #222;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Buttons */
+.cert-left button {
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.cert-left button:hover {
+    background: #ff9800;
+}
+
+/* RIGHT SIDE */
+.cert-right {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Certificate box */
+.cert-box {
+    display: none;
+    text-align: center;
+
+    animation: slideFade 0.8s ease;
+}
+
+/* Image */
+.cert-box img {
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Animation */
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.feedback-btn {
+    position: fixed;   /* fixed position */
+    bottom: 110px;
+    left: 50px;
+
+    padding: 12px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+
+    background: #28a745;   /* green color */
+    color: white;
+
+    cursor: pointer;
+    z-index: 1000;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover animation */
+.feedback-btn:hover {
+    background: #218838;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: #0a0808;
+    color: rgb(28, 39, 139);
+}
+/* MOBILE VIEW - ADD AT END */
+@media (max-width: 768px) {
+
+    .about-page {
+        flex-direction: column;
+    }
+
+    .about-left,
+    .about-right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .skills-container {
+        width: 95%;
+    }
+
+    .cert-page {
+        flex-direction: column;
+    }
+
+    .cert-left {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cert-left button {
+        width: 45%;
+        margin: 5px;
+    }
+
+    .cert-right {
+        width: 100%;
+    }
+
+    .big-btn {
+        width: 90%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
